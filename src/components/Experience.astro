@@ -1,0 +1,25 @@
+---
+import ExperienceItem from './ExperienceItem.astro';
+
+const EXPERIENCIE = [
+    {
+        date: "Agosto 2024 - Presente",
+        title: "Practicante BackEnd Vadevia",
+        description:
+        "Desarrollo funciones de BackEnd escalables para un rendimiento óptimo de la empresa. Usando tecnologías como Python, Django y PostgreSQL.",
+        link: 'https://vadevia.com/',
+    },
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCIE.map(experiencie => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experiencie} />
+            </li>
+        ))
+    }
+    
+</ol>
+

@@ -1,0 +1,77 @@
+---
+import Pythonlogo from "../components/logos/Python.astro";
+import HtmlLogo from "../components/logos/Html.astro"
+import CssLogo from "../components/logos/Css.astro"
+import DjangoLogo from "../components/logos/Django.astro"
+import JsLogo from "../components/logos/JS.astro"
+import { imageConfig } from "astro:assets";
+
+const TAGS = {
+  PYTHON: {
+    name: 'Python',
+    class: 'bg-black text-white',
+    icon : Pythonlogo,
+  },
+  DJANGO: {
+    name: 'Django',
+    class: 'bg-black text-white',
+    icon : DjangoLogo,
+  },
+  HTML: {
+    name: 'Html',
+    class: 'bg-black text-white',
+    icon : HtmlLogo,
+  },
+  CSS: {
+    name: 'Css',
+    class: 'bg-black text-white',
+    icon: CssLogo
+  },
+  JS: {
+    name: 'Javascript',
+    class: 'bg-black text-white',
+    icon: JsLogo,
+  }
+}
+  
+
+const PROJECTS = [
+  {
+    title: "Blog Saldos y Salarios",
+    description: 
+    "Esto es un pequeño blog que realice para aprender a desplegar un proyecto a producción. Use Django como framework de desarrollo y PostgreSQL como base de datos.",
+    link: 'https://saldosysalarios.onrender.com/',
+    github: 'https://github.com/EmilianoMontelongo02/saldosysalarios',
+    image: 'projects/saldosysalarios.jpg',
+    tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.CSS, TAGS.JS]
+  }
+
+]
+---
+
+{
+    PROJECTS.map(({image, title, description, tags, link, github}) => (
+        <article>
+            <a href={link} target="_blank" rel="noopener">
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            </a>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs {$tag.class} py-1 px-2`}>
+                            <tag.icon class="size-6"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <a href={github} target="_blank" rel="noopener">
+                <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={image} 
+                alt={`Captura de pantalla ${image}`}>
+            </a>
+        </article>
+    ))
+}

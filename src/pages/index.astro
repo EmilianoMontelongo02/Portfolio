@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Footer from "../components/Footer.astro";
+import Projects from "../components/Projects.astro";
+import Badge from "../components/Badge.astro";
+import LinkedIn from "../components/logos/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/logos/GitHub.astro";
+import MailIcon from "../components/logos/Mail.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/logos/Briefcase.astro";
+import CodeIcon from "../components/logos/Code.astro"
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Portfolio de Emi Mont con 7 meses de experiencia">
+	<main class="px-4">
+		<SectionContainer id="top" class="py-44 pb-24">
+			<div class="flex flex-row items-center gap-x-4">
+				<img
+					class="rounded-lg size-24 items-center mb-8"
+					src="src/assets/images/2.jpg"
+					alt="emimont photo"
+				/>
+				<h1 class="text-white text-3xl md:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+					Hey, soy Emi Mont<a
+						href="https://www.linkedin.com/in/emi-mont-1aa3a3357/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center"
+					>
+						<Badge>Disponible para Trabajar</Badge>
+					</a>
+				</h1>
+			</div>
+			<h2 class="text-xl text-wrap max-w-[700px]">
+				7 meses de experiencia. <span class="text-orange-300">Desarrollador Backend Python.</span> 
+				<span class="text-blue-200">De Ciudad de México, México.</span> <span class="opacity-75"></span>Especializado en crear soluciones escalables
+				para el Backend.</span> 
+			</h2>
+
+			<nav id="#contacto" class="flex gap-4 mt-8 flex-wrap"> 
+					<SocialPill href="https://www.linkedin.com/in/emi-mont-1aa3a3357/">
+						<LinkedIn class="size-4 md:size-6"/>
+						LinkedIn
+					</SocialPill>
+					<SocialPill href="https://github.com/EmilianoMontelongo02">
+						<GitHubIcon class="size-4 md:size-6"/>
+						GitHub
+					</SocialPill>
+					<SocialPill href="mailto:mudanzasemi@gmail.com">
+						<MailIcon class="size-4 md:size-6"/>
+						mudanzasemi@gmail.com
+					</SocialPill>
+			</nav>
+		</SectionContainer>
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<Briefcase class="size-7"/>
+				Experiencia laboral
+			</h2>
+			<Experience/>
+			<slot/>
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7"/>
+				Proyectos
+			</h2>
+			<Projects/>
+			<slot/>
+		</SectionContainer>
+	</main>
+	<Footer />
+</Layout>

@@ -1,3 +1,5 @@
+
+.vscode/
 # build output
 dist/
 
@@ -20,7 +22,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
-.vscode/
 
 # jetbrains setting folder
 .idea/

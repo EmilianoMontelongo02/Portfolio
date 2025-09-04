@@ -1,48 +1,60 @@
-# Astro Starter Kit: Basics
+# Portfolio Personal
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este es mi **portfolio personal**, creado siguiendo el tutorial de [MiduDev](https://www.youtube.com/c/MiduDev) usando **Astro**.  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Fue un proyecto divertido y educativo, donde aprendí a manejar componentes, layouts y despliegue en la web con **Netlify**.  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Tabla de Contenidos
 
-## 🚀 Project Structure
+- [Descripción](#descripción)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Descripción
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Este portfolio incluye:
 
-## 🧞 Commands
+- Sección de bienvenida, experiencia, proyectos y contacto.
+- Componentes reutilizables para tecnologías y redes sociales.
+- Diseño responsivo y moderno.
+- Despliegue en **Netlify** para acceso público.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Tecnologías
 
-## 👀 Want to learn more?
+- **Astro** – Framework para crear sitios web rápidos.
+- **HTML, CSS y JavaScript** – Para la estructura y estilo.
+- **TailwindCSS** – Para estilos modernos y responsivos.
+- **Netlify** – Para el despliegue del proyecto en línea.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+
+## Estructura del proyecto
+
+-portfolio/
+-│
+-├─ public/
+-│   ├─ projects/         # Imágenes de proyectos
+-│   └─ favicon.svg       # Favicon del sitio
+-│
+-├─ src/
+-│   ├─ assets/images/    # Imágenes usadas en el sitio
+-│   ├─ components/       # Componentes reutilizables (tecnologías, layout, secciones)
+-│   ├─ layouts/          # Layout principal
+-│   ├─ pages/            # Páginas del sitio
+-│   └─ styles/           # Archivos CSS (global.css)
+-│
+-├─ astro.config.mjs       # Configuración de Astro
+-├─ tailwind.config.mjs    # Configuración de TailwindCSS
+-├─ package.json           # Dependencias y scripts
+-└─ README.md
+
+---

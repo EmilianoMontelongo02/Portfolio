@@ -4,6 +4,7 @@ import HtmlLogo from "../components/logos/Html.astro"
 import CssLogo from "../components/logos/Css.astro"
 import DjangoLogo from "../components/logos/Django.astro"
 import JsLogo from "../components/logos/JS.astro"
+import SeleniumLogo from "../components/logos/Selenium.astro"
 import { imageConfig } from "astro:assets";
 
 const TAGS = {
@@ -31,7 +32,12 @@ const TAGS = {
     name: 'Javascript',
     class: 'bg-black text-white',
     icon: JsLogo,
-  }
+  },
+  SELENIUM: {
+    name: 'Selenium',
+    class: 'bg-black text-white',
+    icon: SeleniumLogo,
+  },
 }
   
 
@@ -44,34 +50,41 @@ const PROJECTS = [
     github: 'https://github.com/EmilianoMontelongo02/saldosysalarios',
     image: 'projects/saldosysalarios.jpg',
     tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.CSS, TAGS.JS]
+  },
+  {
+    title: "Web Scrapping",
+    description:"Esto es un ejemplo de que se puede hacer con Selenium, este scraping inicia sesion y extrae informacion en un csv.",
+    link: '',
+    github: 'https://github.com/EmilianoMontelongo02/web-scraping',
+    image: 'projects/WEBSCRAPPING.png',
+    tags: [TAGS.PYTHON, TAGS.SELENIUM]
   }
 
 ]
 ---
 
-{
-    PROJECTS.map(({image, title, description, tags, link, github}) => (
-        <article>
-            <a href={link} target="_blank" rel="noopener">
-                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            </a>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-2">
-                {tags.map((tag) => (
-                    <li>
-                        <span class={`flex gap-x-2 rounded-full text-xs {$tag.class} py-1 px-2`}>
-                            <tag.icon class="size-6"/>
-                            {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <a href={github} target="_blank" rel="noopener">
-                <img 
-                class="rounded shadow-2xl shadow-white/10"
-                src={image} 
-                alt={`Captura de pantalla ${image}`}>
-            </a>
-        </article>
-    ))
-}
+{PROJECTS.map(({image, title, description, tags, link, github}) => (
+  <article class="mb-12"> {/* agrega espacio entre proyectos */}
+    <a href={link} target="_blank" rel="noopener">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+    </a>
+    <p class="text-lg mb-4 text-pretty">{description}</p>
+    <ul class="flex gap-x-2 flex-row mb-2">
+      {tags.map((tag) => (
+        <li>
+          <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+            <tag.icon class="size-6"/>
+            {tag.name}
+          </span>
+        </li>
+      ))}
+    </ul>
+    <a href={github} target="_blank" rel="noopener">
+      <img 
+        class="rounded shadow-2xl shadow-white/10"
+        src={image} 
+        alt={`Captura de pantalla ${image}`} 
+      />
+    </a>
+  </article>
+))}
